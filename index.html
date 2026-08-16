@@ -254,12 +254,11 @@
     width:100%; max-width:100%;
   }
   .team-carousel{
-    display:grid;
-    place-items:center;
+    position:relative;
     height:250px;
   }
   .team-card{
-    grid-column:1; grid-row:1; width:160px;
+    position:absolute; top:0; left:50%; width:160px;
     text-align:center;
     transition:transform 0.6s ease, opacity 0.6s ease;
   }
@@ -826,7 +825,13 @@
         // so JS only needs to add the slide-out offset — no manual
         // half-width subtraction, which removes any chance of a
         // measurement mismatch causing an off-center drift.
-        card.style.transform = `translateX(${raw * SLOT}px) scale(${scale})`;
+        // translateX(-50%) is a percentage relative to the CARD's own width,
+        // computed natively by the browser — this centers it with zero
+        // custom math on our end. The second translateX adds the pixel
+        // slide-out offset. Chaining two translateX() calls (rather than
+        // combining them with calc()) is the most universally-supported way
+        // to mix a percentage offset with a pixel offset.
+        card.style.transform = `translateX(-50%) translateX(${raw * SLOT}px) scale(${scale})`;
         card.style.zIndex = 10 - dist; // closer to center always sits on top
         card.style.opacity = opacity;
         card.classList.remove('center', 'near');
