@@ -251,10 +251,14 @@
   .mv-card p{font-size:0.9rem; color:#565650;}
 
   .team-carousel-wrap{
-    overflow:visible; padding:30px 0 10px; margin-top:10px;
+    overflow:hidden; padding:30px 0 10px; margin-top:10px;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
   }
   .team-carousel{
-    display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:30px 40px;
+    display:flex; align-items:center; gap:40px;
+    transition:transform 0.6s ease;
+    will-change:transform;
   }
   .team-card{text-align:center; flex-shrink:0; width:160px; transition:transform 0.5s ease, opacity 0.5s ease;}
   .team-card .ph{height:120px; width:120px; border-radius:50%; margin:0 auto 14px; transition:height 0.5s ease, width 0.5s ease;}
@@ -756,32 +760,63 @@
     }, 5000);
   })();
 
-  // ---- Team spotlight (center member scales up, cycles forever in place) ----
+  // ---- Team carousel: slides forward continuously, member 1 flows right after the last member ----
   (function(){
     const track = document.getElementById('teamCarousel');
     if(!track) return;
-    const cards = Array.from(track.children);
-    const total = cards.length;
-    let centerIndex = 0;
+    const originalCards = Array.from(track.children);
+    const total = originalCards.length;
 
-    function render(){
-      cards.forEach((card, i) => {
+    // Duplicate the whole row and append it, so the track can keep sliding
+    // forward past the last member straight into a copy of the first member.
+    originalCards.forEach(card => {
+      track.appendChild(card.cloneNode(true));
+    });
+    const allCards = Array.from(track.children); // length = total * 2
+
+    let index = 0; // position within allCards we're currently centering
+
+    function highlight(){
+      allCards.forEach((card, i) => {
         card.classList.remove('center', 'near');
         const distance = Math.min(
-          Math.abs(i - centerIndex),
-          total - Math.abs(i - centerIndex)
+          Math.abs(i - index),
+          allCards.length - Math.abs(i - index)
         );
         if(distance === 0) card.classList.add('center');
         else if(distance === 1) card.classList.add('near');
       });
     }
 
-    render();
+    function slideTo(i, animate){
+      track.style.transition = animate ? 'transform 0.6s ease' : 'none';
+      const wrap = track.parentElement;
+      const centerCard = allCards[i];
+      const wrapCenter = wrap.offsetWidth / 2;
+      const cardCenter = centerCard.offsetLeft + centerCard.offsetWidth / 2;
+      track.style.transform = `translateX(${wrapCenter - cardCenter}px)`;
+    }
+
+    highlight();
+    slideTo(0, false);
 
     setInterval(() => {
-      centerIndex = (centerIndex + 1) % total;
-      render();
+      index++;
+      highlight();
+      slideTo(index, true);
+
+      // Once we've slid one full lap into the cloned half, snap invisibly
+      // back to the real first card — since it's identical, nothing visibly jumps.
+      if(index === total){
+        setTimeout(() => {
+          index = 0;
+          highlight();
+          slideTo(index, false);
+        }, 600);
+      }
     }, 2500);
+
+    window.addEventListener('resize', () => slideTo(index, false));
   })();
 </script>
 
