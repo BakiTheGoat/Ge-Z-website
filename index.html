@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest:#1F3D2B;
-    --leaf:#4C8C4A;
+    --forest:#1F4D3A;
+    --leaf:#6FAF58;
     --gold:#D9A441;
-    --kraft:#C9B79C;
-    --cream:#F6F1E7;
-    --charcoal:#2B2B28;
-    --leaf-soft:#7FAE6C;
+    --kraft:#D8C4A3;
+    --cream:#F7F4EA;
+    --charcoal:#25302B;
+    --leaf-soft:#8FC178;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -73,12 +73,10 @@
   }
   .logo{display:flex; align-items:center; gap:10px; flex-shrink:0;}
   .logo-mark{
-    width:46px; height:46px; border-radius:50%;
-    background:conic-gradient(from 220deg, var(--leaf), var(--gold), var(--leaf-soft), var(--leaf));
-    display:flex; align-items:center; justify-content:center;
-    color:var(--cream); font-family:'Fraunces',serif; font-weight:700; font-size:1.3rem;
+    width:46px; height:46px;
     flex-shrink:0;
   }
+  .logo-mark img{width:100%; height:100%; object-fit:contain; display:block;}
   .logo-text{font-family:'Fraunces',serif; font-weight:700; color:var(--forest); font-size:1.25rem; letter-spacing:0.5px;}
   .logo-text small{display:block; font-family:'Work Sans',sans-serif; font-weight:500; font-size:0.6rem; color:var(--leaf); letter-spacing:1.5px; text-transform:uppercase;}
 
@@ -349,7 +347,7 @@
 <header>
   <nav>
     <div class="logo">
-      <div class="logo-mark">G</div>
+      <div class="logo-mark"><img src="logo-icon.png" alt="GE-Z logo"></div>
       <div class="logo-text">GE-Z<small>Green · Ecosystem · Zero Waste</small></div>
     </div>
 
@@ -534,7 +532,24 @@
     <div class="max">
       <div class="eyebrow">About GE-Z</div>
       <h1 style="font-size:2.2rem;">Green Ecosystem, Zero Waste.</h1>
-      <p style="margin-top:14px;">GE-Z (pronounced like "Gen-Z", and echoing the Khmer word ជី) stands for Green, Ecosystem, Zero Waste — a name for a generation that wants to build a circular economy in Cambodia, one restaurant at a time.</p>
+      <p style="margin-top:14px;">GE-Z sounds like "Gen Z" — because this idea comes from us, Gen Z. GE also echoes the Khmer word ជី. <strong>G</strong>reen, <strong>E</strong>cosystem, <strong>Z</strong>ero Waste — a name for a generation building a circular economy in Cambodia, one restaurant at a time.</p>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="max intro">
+      <div class="ph" style="height:280px; background:var(--cream); border-style:solid;">
+        <img src="logo-lockup.png" alt="GE-Z logo" style="width:100%; height:100%; object-fit:contain; border-radius:0;">
+      </div>
+      <div>
+        <div class="eyebrow">Logo Symbolism</div>
+        <h2 style="font-size:1.8rem;">What our mark means</h2>
+        <p>The GE-Z logo represents our mission to transform food waste into a valuable resource through a circular economy.</p>
+        <p><strong>The letter "G"</strong> stands for GE-Z and Green, symbolizing sustainability and environmental responsibility.</p>
+        <p><strong>The circular design</strong> represents the continuous cycle of collecting food waste, converting it into compost, and returning nutrients to agriculture instead of sending waste to landfills.</p>
+        <p><strong>The leaves</strong> symbolize growth, nature, and the renewal of resources.</p>
+        <p><strong>The brown organic texture</strong> represents compost and healthy soil, while the <strong>golden grain pattern</strong> reflects agriculture and the value created from recovered food waste.</p>
+      </div>
     </div>
   </section>
 
@@ -686,7 +701,7 @@
   <div class="foot-grid">
     <div>
       <div class="logo" style="margin-bottom:14px;">
-        <div class="logo-mark">G</div>
+        <div class="logo-mark"><img src="logo-icon.png" alt="GE-Z logo"></div>
         <div class="logo-text" style="color:#fff;">GE-Z</div>
       </div>
       <p>Green Ecosystem, Zero Waste. Turning Phnom Penh's food waste into a resource, one restaurant at a time.</p>
