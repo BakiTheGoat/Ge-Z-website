@@ -316,10 +316,11 @@
     .cards, .news-grid, .mv-grid{grid-template-columns:1fr 1fr;}
     .team-carousel{height:200px;}
     .team-card{width:120px; margin-left:-60px;}
-    /* On phones, only show the centered spotlight photo — the side photos
-       were overlapping their neighbor's name/role text in narrow or
-       landscape views, so we hide them here and keep just one clean photo. */
-    .team-card:not(.center){display:none;}
+    /* On phones, keep all photos visible, but only show the name/role text
+       for whichever member is centered — the side names were overlapping
+       into their neighbor's photo, so we hide just the text, not the photo. */
+    .team-card:not(.center) h4,
+    .team-card:not(.center) span{display:none;}
     .cycle{grid-template-columns:1fr; gap:24px;}
     .cycle-arrow{transform:rotate(90deg);}
     .foot-grid{grid-template-columns:1fr 1fr;}
