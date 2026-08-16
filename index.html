@@ -70,7 +70,7 @@
     padding:14px 5%;
     max-width:1300px; margin:0 auto;
   }
-  .logo{display:flex; align-items:center; gap:10px;}
+  .logo{display:flex; align-items:center; gap:10px; flex-shrink:0;}
   .logo-mark{
     width:46px; height:46px; border-radius:50%;
     background:conic-gradient(from 220deg, var(--leaf), var(--gold), var(--leaf-soft), var(--leaf));
@@ -81,8 +81,8 @@
   .logo-text{font-family:'Fraunces',serif; font-weight:700; color:var(--forest); font-size:1.25rem; letter-spacing:0.5px;}
   .logo-text small{display:block; font-family:'Work Sans',sans-serif; font-weight:500; font-size:0.6rem; color:var(--leaf); letter-spacing:1.5px; text-transform:uppercase;}
 
-  .nav-links{display:flex; align-items:center; gap:34px;}
-  .nav-links > li{position:relative;}
+  .nav-links{display:flex; align-items:center; gap:34px; flex-wrap:nowrap;}
+  .nav-links > li{position:relative; flex-shrink:0;}
   .nav-links a{font-weight:600; font-size:0.92rem; color:var(--forest); cursor:pointer; padding:8px 2px;}
   .nav-links a:hover, .nav-links a.active{color:var(--leaf);}
   .caret{font-size:0.6rem; margin-left:4px;}
@@ -102,9 +102,10 @@
   .dropdown li a:hover{background:var(--cream); color:var(--leaf);}
 
   .nav-cta{
-    background:var(--leaf); color:#fff; padding:10px 20px; border-radius:30px;
+    background:var(--leaf); color:#fff; padding:10px 22px; border-radius:30px;
     font-weight:600; font-size:0.85rem;
     white-space:nowrap; flex-shrink:0; display:inline-block;
+    min-width:max-content;
   }
   .nav-cta:hover, .nav-links a.nav-cta.active{color:#fff; background:var(--forest);}
 
