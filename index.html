@@ -749,6 +749,7 @@
     document.querySelectorAll('[data-page="'+id+'"]').forEach(a => a.classList.add('active'));
     document.querySelector('.nav-links').classList.remove('open');
     window.scrollTo({top:0, behavior:'smooth'});
+    if(id === 'about' && window.refreshTeamCarousel) window.refreshTeamCarousel();
   }
 
   // ---- Hero image slider (auto-rotates every 5 seconds) ----
@@ -792,8 +793,10 @@
 
     function updateSlot(){
       // measure the real card width for this screen size, then leave enough
-      // room so the enlarged center card never touches its neighbors
-      const cardWidth = cards[0].getBoundingClientRect().width;
+      // room so the enlarged center card never touches its neighbors.
+      // getComputedStyle works even while the About page is hidden (unlike
+      // getBoundingClientRect, which would measure 0 and crush everything).
+      const cardWidth = parseFloat(getComputedStyle(cards[0]).width) || 160;
       SLOT = cardWidth * 1.3 + 20;
     }
 
@@ -826,6 +829,11 @@
 
     updateSlot();
     render();
+
+    window.refreshTeamCarousel = () => {
+      updateSlot();
+      render();
+    };
 
     setInterval(() => {
       center = (center + 1) % total;
