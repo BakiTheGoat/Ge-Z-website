@@ -104,8 +104,9 @@
   .nav-cta{
     background:var(--leaf); color:#fff; padding:10px 20px; border-radius:30px;
     font-weight:600; font-size:0.85rem;
+    white-space:nowrap; flex-shrink:0; display:inline-block;
   }
-  .nav-cta:hover{background:var(--forest); color:#fff;}
+  .nav-cta:hover, .nav-links a.nav-cta.active{color:#fff; background:var(--forest);}
 
   .burger{display:none; font-size:1.5rem; color:var(--forest); cursor:pointer; background:none; border:none;}
 
