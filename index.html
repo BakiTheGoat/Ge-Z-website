@@ -151,7 +151,25 @@
   .btn-gold{background:var(--gold); color:var(--forest);}
   .btn-outline{border:1.5px solid var(--cream); color:var(--cream);}
 
-  .hero-visual .ph{height:320px; width:100%;}
+  .hero-visual{position:relative;}
+  .hero-slider{position:relative; height:320px; width:100%; border-radius:10px; overflow:hidden;}
+  .hero-slider .slide{
+    position:absolute; inset:0;
+    opacity:0; visibility:hidden;
+    transition:opacity 0.6s ease;
+  }
+  .hero-slider .slide.active{opacity:1; visibility:visible;}
+  .hero-slider .slide .ph{height:100%; width:100%; border-radius:10px;}
+  .hero-slider .slide img{width:100%; height:100%; object-fit:cover; border-radius:10px; display:block;}
+  .slider-dots{
+    position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    display:flex; gap:8px; z-index:5;
+  }
+  .slider-dots span{
+    width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.5);
+    cursor:pointer; transition:background 0.2s ease;
+  }
+  .slider-dots span.active{background:var(--gold);}
 
   .stats-strip{
     background:var(--cream);
@@ -353,9 +371,26 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="ph">
-          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
-          Add hero photo / product shot here
+        <div class="hero-slider" id="heroSlider">
+          <div class="slide active">
+            <div class="ph">
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+              Add hero photo 1 here
+            </div>
+          </div>
+          <div class="slide">
+            <div class="ph">
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+              Add hero photo 2 here
+            </div>
+          </div>
+          <div class="slide">
+            <div class="ph">
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+              Add hero photo 3 here
+            </div>
+          </div>
+          <div class="slider-dots" id="sliderDots"></div>
         </div>
       </div>
     </div>
@@ -676,6 +711,34 @@
     document.querySelector('.nav-links').classList.remove('open');
     window.scrollTo({top:0, behavior:'smooth'});
   }
+
+  // ---- Hero image slider (auto-rotates every 5 seconds) ----
+  (function(){
+    const slides = document.querySelectorAll('#heroSlider .slide');
+    const dotsWrap = document.getElementById('sliderDots');
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = dotsWrap.querySelectorAll('span');
+
+    function goToSlide(index){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      goToSlide(next);
+    }, 5000);
+  })();
 </script>
 
 </body>
