@@ -367,7 +367,7 @@
     .foot-grid{grid-template-columns:1fr; gap:32px; text-align:left;}
     /* On phones, the card is wide enough to fill the screen on its own —
        only the centered member shows, no peeking neighbors either side. */
-    .tm-card{width:88vw; margin-left:-44vw;}
+    .tm-card{width:100%;}
     .team-carousel{height:540px;}
     .team-nav{top:120px;}
   }
@@ -929,7 +929,12 @@
     let center = 0;
 
     function updateSlot(){
-      SLOT = window.innerWidth <= 640 ? window.innerWidth * 0.92 : 340;
+      // measure the carousel's real visible width (which is narrower than
+      // the raw screen width because of the page's side padding) so cards
+      // land fully on-screen instead of being clipped at the edges.
+      const wrap = track.closest('.team-carousel-wrap');
+      const wrapWidth = wrap ? wrap.getBoundingClientRect().width : window.innerWidth;
+      SLOT = window.innerWidth <= 640 ? wrapWidth + 14 : 340;
     }
 
     function render(){
