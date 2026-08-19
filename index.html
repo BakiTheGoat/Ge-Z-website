@@ -271,7 +271,7 @@
   .tm-card{
     position:absolute; top:0; left:50%; width:300px;
     background:#fff;
-    box-shadow:0 18px 40px rgba(31,77,58,0.16);
+    box-shadow:0 4px 14px rgba(31,77,58,0.12);
     transition:transform 0.5s ease, opacity 0.5s ease;
     overflow:hidden;
   }
@@ -279,16 +279,21 @@
   .tm-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .tm-photo .ph{height:100%; width:100%; border-radius:0; border:none;}
   .tm-overlay{
-    position:absolute; left:0; right:0; bottom:0; padding:16px 20px;
+    position:absolute; left:0; right:0; bottom:0; height:90px; padding:16px 20px;
     background:linear-gradient(180deg, transparent, rgba(31,77,58,0.92) 75%);
     opacity:0; transition:opacity 0.4s ease;
+    display:flex; flex-direction:column; justify-content:flex-end;
   }
   .tm-card.tm-active .tm-overlay{opacity:1;}
   .tm-overlay h4{color:#fff; font-size:1.15rem; margin-bottom:2px; text-transform:uppercase; letter-spacing:0.5px;}
   .tm-overlay span{color:#e7ecdf; font-size:0.78rem; letter-spacing:1px; text-transform:uppercase;}
   .tm-body{padding:20px 22px 24px; text-align:left;}
   .tm-quote-mark{color:var(--gold); font-size:1.8rem; font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;}
-  .tm-quote{font-size:0.85rem; font-style:italic; color:#4b4b46; line-height:1.5; margin-bottom:16px; min-height:75px;}
+  .tm-quote{
+    font-size:0.85rem; font-style:italic; color:#4b4b46; line-height:1.5; margin-bottom:16px;
+    height:75px; overflow:hidden; text-overflow:ellipsis;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+  }
   .tm-footer{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
   .tm-name{font-size:1.05rem; color:var(--forest); margin-bottom:4px; font-family:'Playfair Display',serif;}
   .tm-role{font-size:0.72rem; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;}
@@ -656,15 +661,15 @@
           <div class="tm-card">
             <div class="tm-photo">
               <img src="team-member-1.jpg" alt="Team member">
-              <div class="tm-overlay"><h4>[Full Name]</h4><span>Founder / Role</span></div>
+              <div class="tm-overlay"><h4>Sovann Phallyka</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
-              <p class="tm-quote">We don't have to accept waste as the end of the story. Every restaurant we bring on board is proof that what's thrown away can still grow something.</p>
+              <p class="tm-quote">We don't have to accept waste as the end of the story. It can be the start of something that grows.</p>
               <div class="tm-footer">
                 <div>
-                  <h5 class="tm-name">[Full Name]</h5>
-                  <div class="tm-role">Founder / Role</div>
+                  <h5 class="tm-name">Sovann Phallyka</h5>
+                  <div class="tm-role">Role</div>
                   <div class="tm-dept">[Department]</div>
                 </div>
                 <button class="tm-mail" aria-label="Email">✉</button>
