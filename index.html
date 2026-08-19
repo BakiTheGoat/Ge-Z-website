@@ -951,14 +951,31 @@
     updateSlot();
     render();
 
-    document.getElementById('teamNext').addEventListener('click', () => {
+    function goNext(){
       center = (center + 1) % total;
       render();
-    });
-    document.getElementById('teamPrev').addEventListener('click', () => {
+    }
+    function goPrev(){
       center = (center - 1 + total) % total;
       render();
+    }
+
+    document.getElementById('teamNext').addEventListener('click', () => {
+      goNext();
+      resetAutoplay();
     });
+    document.getElementById('teamPrev').addEventListener('click', () => {
+      goPrev();
+      resetAutoplay();
+    });
+
+    // Auto-advance every 5 seconds. Clicking an arrow manually resets the
+    // timer so it doesn't jump again right after someone navigates by hand.
+    let autoplayTimer = setInterval(goNext, 5000);
+    function resetAutoplay(){
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(goNext, 5000);
+    }
 
     window.refreshTeamCarousel = () => { updateSlot(); render(); };
     window.addEventListener('resize', () => { updateSlot(); render(); });
