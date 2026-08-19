@@ -266,7 +266,7 @@
   }
   .team-carousel{
     position:relative;
-    height:560px;
+    height:685px;
   }
   .tm-card{
     position:absolute; top:0; left:50%; width:300px;
@@ -275,7 +275,7 @@
     transition:transform 0.5s ease, opacity 0.5s ease;
     overflow:hidden;
   }
-  .tm-photo{position:relative; height:280px; background:var(--kraft); overflow:hidden;}
+  .tm-photo{position:relative; height:375px; background:var(--kraft); overflow:hidden;}
   .tm-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .tm-photo .ph{height:100%; width:100%; border-radius:0; border:none;}
   .tm-overlay{
@@ -291,8 +291,8 @@
   .tm-quote-mark{color:var(--gold); font-size:1.8rem; font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;}
   .tm-quote{
     font-size:0.85rem; font-style:italic; color:#4b4b46; line-height:1.5; margin-bottom:16px;
-    height:75px; overflow:hidden; text-overflow:ellipsis;
-    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+    height:98px; overflow:hidden; text-overflow:ellipsis;
+    display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical;
   }
   .tm-footer{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
   .tm-name{font-size:1.05rem; color:var(--forest); margin-bottom:4px; font-family:'Playfair Display',serif;}
@@ -304,7 +304,7 @@
     display:flex; align-items:center; justify-content:center; font-size:0.85rem;
   }
   .team-nav{
-    position:absolute; top:140px; width:100%; display:flex; justify-content:space-between;
+    position:absolute; top:185px; width:100%; display:flex; justify-content:space-between;
     left:0; z-index:20; pointer-events:none;
   }
   .team-nav button{
@@ -404,8 +404,8 @@
        overlap regardless of any spacing calculation. */
     .tm-card{width:100%;}
     .tm-card:not(.tm-active){display:none;}
-    .team-carousel{height:540px;}
-    .team-nav{top:120px;}
+    .team-carousel{height:665px;}
+    .team-nav{top:160px;}
   }
 </style>
 </head>
@@ -660,8 +660,8 @@
         <div class="team-carousel" id="teamCarousel">
           <div class="tm-card">
             <div class="tm-photo">
-              <img src="team-member-1.jpg" alt="Team member">
-              <div class="tm-overlay"><h4>Sovann Phallyka</h4><span>Role</span></div>
+              <img src="tm1-sovann.jpg" alt="Sovann Phallyka">
+              <div class="tm-overlay"><h4>Sovann Phallyka</h4><span>Founder</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
@@ -669,8 +669,8 @@
               <div class="tm-footer">
                 <div>
                   <h5 class="tm-name">Sovann Phallyka</h5>
-                  <div class="tm-role">Role</div>
-                  <div class="tm-dept">[Department]</div>
+                  <div class="tm-role">Founder</div>
+                  <div class="tm-dept">Digital Marketing</div>
                 </div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
@@ -678,7 +678,7 @@
           </div>
           <div class="tm-card">
             <div class="tm-photo">
-              <img src="team-member-2.jpg" alt="Sreng Yly">
+              <img src="tm2-sreng.jpg" alt="Sreng Yly">
               <div class="tm-overlay"><h4>Sreng Yly</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
@@ -688,7 +688,7 @@
                 <div>
                   <h5 class="tm-name">Sreng Yly</h5>
                   <div class="tm-role">Role</div>
-                  <div class="tm-dept">[Department]</div>
+                  <div class="tm-dept">Digital Marketing</div>
                 </div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
@@ -696,7 +696,7 @@
           </div>
           <div class="tm-card">
             <div class="tm-photo">
-              <img src="team-member-3.jpg" alt="Phal Kimheng">
+              <img src="tm3-phal.jpg" alt="Phal Khimheng">
               <div class="tm-overlay"><h4>Phal Khimheng</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
@@ -706,60 +706,64 @@
                 <div>
                   <h5 class="tm-name">Phal Khimheng</h5>
                   <div class="tm-role">Role</div>
-                  <div class="tm-dept">[Department]</div>
+                  <div class="tm-dept">Digital Marketing</div>
                 </div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
             </div>
           </div>
           <div class="tm-card">
-            <div class="tm-photo"><div class="ph">Photo</div>
-              <div class="tm-overlay"><h4>[Full Name]</h4><span>Role</span></div>
+            <div class="tm-photo">
+              <img src="tm4-ngeap.jpg" alt="Ngeap Lying">
+              <div class="tm-overlay"><h4>Ngeap Lying</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
               <p class="tm-quote">Working on GE-Z taught me that circular economy isn't abstract, it's bins, routes, and showing up every week.</p>
               <div class="tm-footer">
-                <div><h5 class="tm-name">[Full Name]</h5><div class="tm-role">Role</div><div class="tm-dept">[Department]</div></div>
+                <div><h5 class="tm-name">Ngeap Lying</h5><div class="tm-role">Role</div><div class="tm-dept">Digital Marketing</div></div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
             </div>
           </div>
           <div class="tm-card">
-            <div class="tm-photo"><div class="ph">Photo</div>
-              <div class="tm-overlay"><h4>[Full Name]</h4><span>Role</span></div>
+            <div class="tm-photo">
+              <img src="tm5-chea.jpg" alt="Chea Rina">
+              <div class="tm-overlay"><h4>Chea Rina</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
               <p class="tm-quote">I joined because I wanted to build something Cambodia hasn't seen before, and this felt like the right place to start.</p>
               <div class="tm-footer">
-                <div><h5 class="tm-name">[Full Name]</h5><div class="tm-role">Role</div><div class="tm-dept">[Department]</div></div>
+                <div><h5 class="tm-name">Chea Rina</h5><div class="tm-role">Role</div><div class="tm-dept">Digital Marketing</div></div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
             </div>
           </div>
           <div class="tm-card">
-            <div class="tm-photo"><div class="ph">Photo</div>
-              <div class="tm-overlay"><h4>[Full Name]</h4><span>Role</span></div>
+            <div class="tm-photo">
+              <img src="tm6-phat.jpg" alt="Phat Thidareacheanith">
+              <div class="tm-overlay"><h4>Phat Thidareacheanith</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
               <p class="tm-quote">What we're building here is bigger than one product. It's a habit we're trying to make normal again.</p>
               <div class="tm-footer">
-                <div><h5 class="tm-name">[Full Name]</h5><div class="tm-role">Role</div><div class="tm-dept">[Department]</div></div>
+                <div><h5 class="tm-name">Phat Thidareacheanith</h5><div class="tm-role">Role</div><div class="tm-dept">Digital Marketing</div></div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
             </div>
           </div>
           <div class="tm-card">
-            <div class="tm-photo"><div class="ph">Photo</div>
-              <div class="tm-overlay"><h4>[Full Name]</h4><span>Role</span></div>
+            <div class="tm-photo">
+              <img src="tm7-khong.jpg" alt="Khong Kheangly">
+              <div class="tm-overlay"><h4>Khong Kheangly</h4><span>Role</span></div>
             </div>
             <div class="tm-body">
               <div class="tm-quote-mark">"</div>
               <p class="tm-quote">I like that every restaurant partner we sign up is one less bag of food waste heading to a landfill.</p>
               <div class="tm-footer">
-                <div><h5 class="tm-name">[Full Name]</h5><div class="tm-role">Role</div><div class="tm-dept">[Department]</div></div>
+                <div><h5 class="tm-name">Khong Kheangly</h5><div class="tm-role">Role</div><div class="tm-dept">Digital Marketing</div></div>
                 <button class="tm-mail" aria-label="Email">✉</button>
               </div>
             </div>
