@@ -109,6 +109,11 @@
   .nav-cta:hover, .nav-links a.nav-cta.active{color:#fff; background:var(--forest);}
 
   .burger{display:none; font-size:1.5rem; color:var(--forest); cursor:pointer; background:none; border:none;}
+  .nav-close-row{display:none;}
+  .nav-close{
+    display:none; background:none; border:none; font-size:1.4rem; color:var(--forest);
+    cursor:pointer; padding:6px;
+  }
 
   /* ---------- Pages ---------- */
   .page{display:none; animation:fade 0.35s ease;}
@@ -210,6 +215,7 @@
   .cycle-step h4{font-size:0.9rem; color:#fff; margin-bottom:4px;}
   .cycle-step p{font-size:0.75rem; opacity:0.75;}
   .cycle-arrow{color:var(--gold); font-size:1.4rem; text-align:center;}
+  .cycle-connector{display:none;}
   .cycle-row2{grid-template-columns:1fr auto 1fr;}
 
   /* ---------- Cards (services / products) ---------- */
@@ -383,6 +389,7 @@
     .cards, .news-grid, .mv-grid{grid-template-columns:1fr 1fr;}
     .cycle{grid-template-columns:1fr; gap:24px;}
     .cycle-arrow{transform:rotate(90deg);}
+    .cycle-connector{display:block; color:var(--gold); font-size:1.4rem; text-align:center; margin:8px 0; transform:rotate(90deg);}
     .foot-grid{grid-template-columns:1fr 1fr;}
     .stats-strip .max{grid-template-columns:1fr 1fr;}
   }
@@ -397,6 +404,8 @@
     .dropdown{position:static; box-shadow:none; opacity:1; visibility:visible; transform:none; display:none; margin-top:8px;}
     .nav-links > li.open .dropdown{display:block;}
     .burger{display:block;}
+    .nav-close-row{display:block; text-align:right; margin-bottom:10px;}
+    .nav-close{display:inline-block;}
     .cards, .news-grid, .mv-grid{grid-template-columns:1fr;}
     .hero h1{font-size:2rem;}
     .foot-grid{grid-template-columns:1fr; gap:32px; text-align:left;}
@@ -427,6 +436,7 @@
     <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
 
     <ul class="nav-links">
+      <li class="nav-close-row"><button class="nav-close" onclick="document.querySelector('.nav-links').classList.remove('open')" aria-label="Close menu">✕</button></li>
       <li><a data-page="home" class="active" onclick="goTo('home')">Home</a></li>
       <li><a data-page="about" onclick="goTo('about')">About Us</a></li>
       <li>
@@ -528,6 +538,7 @@
           </div>
         </div>
       </div>
+      <div class="cycle-connector">→</div>
       <div class="cycle-wrap" style="margin-top:10px;">
         <div class="cycle cycle-row2">
           <div class="cycle-step">
