@@ -87,7 +87,7 @@
   .caret{font-size:0.6rem; margin-left:4px;}
 
   .dropdown{
-    position:absolute; top:110%; left:-20px;
+    position:absolute; top:100%; left:-20px; margin-top:6px;
     background:#fff;
     border-radius:10px;
     box-shadow:0 14px 30px rgba(31,61,43,0.16);
@@ -95,6 +95,9 @@
     padding:10px;
     opacity:0; visibility:hidden; transform:translateY(6px);
     transition:all 0.18s ease;
+  }
+  .dropdown::before{
+    content:""; position:absolute; top:-14px; left:0; right:0; height:14px;
   }
   .nav-links > li:hover .dropdown{opacity:1; visibility:visible; transform:translateY(0);}
   .dropdown li a{display:block; padding:10px 12px; border-radius:7px; font-size:0.86rem;}
@@ -442,9 +445,9 @@
       <li>
         <a onclick="this.parentElement.classList.toggle('open'); goTo('services');">Our Products <span class="caret">▾</span></a>
         <ul class="dropdown">
-          <li><a data-page="services" onclick="goTo('services')">Smart Organic Cube</a></li>
-          <li><a data-page="services" onclick="goTo('services')">Sack (Bulk Compost)</a></li>
-          <li><a data-page="services" onclick="goTo('services')">Organic Waste Collection</a></li>
+          <li><a data-page="services" onclick="goTo('services')">Collection Service</a></li>
+          <li><a data-page="services" onclick="goTo('services')">Smart Compost Cube</a></li>
+          <li><a data-page="services" onclick="goTo('services')">Green Partner Program</a></li>
         </ul>
       </li>
       <li><a data-page="news" onclick="goTo('news')">Latest News</a></li>
@@ -462,7 +465,7 @@
       <div>
         <div class="eyebrow">Circular Economy Startup</div>
         <h1>Turning restaurant food waste into <em>growth</em> for local farms.</h1>
-        <p>GE-Z connects restaurants with a scheduled waste collection service, then transforms what they throw away into Smart Organic Cubes — pre-measured organic fertilizer for farmers and gardeners across Cambodia.</p>
+        <p>GE-Z connects restaurants with a scheduled waste collection service, then transforms what they throw away into Smart Compost Cubes — pre-measured organic fertilizer for farmers and gardeners across Cambodia.</p>
         <div class="btn-row">
           <a class="btn btn-gold" data-page="services" onclick="goTo('services')">Explore Our Services</a>
           <a class="btn btn-outline" data-page="about" onclick="goTo('about')">Our Story</a>
@@ -502,9 +505,9 @@
       </div>
       <div>
         <div class="eyebrow">Who We Are</div>
-        <h2>Turning two of Cambodia's biggest problems into one solution.</h2>
-        <p>Over 51.9% of municipal solid waste in Phnom Penh is food waste, while Cambodia imports roughly 98% of its chemical fertilizer — spending around $420 million a year, with prices recently surging 25–30%. GE-Z (Green, Ecosystem, Zero Waste) exists to turn one of those problems into the fix for the other.</p>
-        <p>We collect recovered food waste from restaurants and crop residue from rural farms, then turn it into Smart Organic Cubes and bulk Sack compost — affordable, safer organic fertilizer for Cambodian farmers.</p>
+        <h2>A Digital Marketing student's answer to Phnom Penh's food waste problem.</h2>
+        <p>Every day, restaurants and food businesses throw away leftover food, peels, and scraps that could become something useful. GE-Z is a web platform that lets restaurants schedule pickups the way they'd order a delivery — simple, fast, and part of a bigger cycle.</p>
+        <p>The waste we collect is processed into Smart Compost Cubes: compressed, pre-measured organic fertilizer that's easy for farmers and gardeners to use, wrapped in biodegradable packaging.</p>
         <a class="btn btn-gold" style="color:#fff; background:var(--leaf);" data-page="about" onclick="goTo('about')">Read Our Full Story</a>
       </div>
     </div>
@@ -543,7 +546,7 @@
         <div class="cycle cycle-row2">
           <div class="cycle-step">
             <div class="cycle-circle">4</div>
-            <h4>Smart Organic Cube</h4>
+            <h4>Smart Compost Cube</h4>
             <p>Packed into pre-measured, biodegradable cubes</p>
           </div>
           <div class="cycle-arrow">→</div>
@@ -566,26 +569,26 @@
       </div>
       <div class="cards">
         <div class="card">
-          <div class="ph" style="height:170px;">Photo of Smart Organic Cube</div>
+          <div class="ph" style="height:170px;">Add photo of collection team / bins</div>
           <div class="card-body">
-            <h3>Smart Organic Cube</h3>
-            <p>Pre-measured, compressed organic fertilizer wrapped in water-soluble paper, packaged in a reusable tin.</p>
+            <h3>Waste Collection Service</h3>
+            <p>Scheduled pickups for restaurants and food businesses, with free sorting bins and staff training included.</p>
             <a class="card-link" data-page="services" onclick="goTo('services')">Learn more →</a>
           </div>
         </div>
         <div class="card">
-          <div class="ph" style="height:170px;">Photo of bulk compost sack</div>
+          <div class="ph" style="height:170px;">Add product photo of compost cube</div>
           <div class="card-body">
-            <h3>Sack (Bulk Compost)</h3>
-            <p>Uncompressed organic compost sold in bulk for larger farms and agricultural operations.</p>
+            <h3>Smart Compost Cube</h3>
+            <p>Compressed organic fertilizer, pre-measured per land size, wrapped in biodegradable packaging.</p>
             <a class="card-link" data-page="services" onclick="goTo('services')">Learn more →</a>
           </div>
         </div>
         <div class="card">
-          <div class="ph" style="height:170px;">Photo of collection team / bins</div>
+          <div class="ph" style="height:170px;">Add photo of certificate / partner event</div>
           <div class="card-body">
-            <h3>Organic Waste Collection</h3>
-            <p>Recovering food waste from BKK1 restaurants and crop residue from rural farms, at no cost to urban partners.</p>
+            <h3>Green Partner Program</h3>
+            <p>Restaurants earn a Green Partner certificate for consistent, well-sorted waste contribution.</p>
             <a class="card-link" data-page="services" onclick="goTo('services')">Learn more →</a>
           </div>
         </div>
@@ -618,22 +621,6 @@
     </div>
   </section>
 
-  <section style="background:#fff;">
-    <div class="max">
-      <div class="section-head">
-        <div class="eyebrow">Our Story</div>
-        <h2>Two broken systems, one shared solution</h2>
-      </div>
-      <div style="max-width:800px; margin:0 auto;">
-        <p>GE-Z started during an intensive two-and-a-half-month SME venture project by a team of Digital Marketing students in Phnom Penh. Looking across our city and agricultural sector, we identified two broken systems existing side by side.</p>
-        <p style="margin-top:14px;"><strong>The Urban Waste Problem:</strong> Over 51.9% of municipal solid waste in Phnom Penh is food waste (ResearchGate). Tons of nutrient-rich organic matter from restaurants and markets are dumped into landfills daily.</p>
-        <p style="margin-top:14px;"><strong>The Fertilizer Crisis:</strong> Cambodia imports roughly 98% of its chemical fertilizer, spending around $420 million annually. Recent price surges of 25% to 30% have placed severe financial strain on local smallholders, forcing many to abandon seasonal crops (Cambodianess, 2026).</p>
-        <p style="margin-top:14px;">Instead of letting food waste damage our environment while local farmers struggle with the high cost of imported chemicals, we created GE-Z. Through our digital platform, we coordinate with food businesses in BKK1 to collect their organic waste and purchase leftover crop residue directly from rural villagers, providing them with supplementary income. Partnering with local manufacturing facilities, we transform these raw inputs into high-quality, affordable organic fertilizer.</p>
-        <p style="margin-top:14px;">What began as an academic project is our practical contribution toward a cleaner Phnom Penh and a more self-reliant agricultural future for Cambodia.</p>
-      </div>
-    </div>
-  </section>
-
   <section>
     <div class="max intro">
       <div class="ph" style="height:280px; background:var(--cream); border-style:solid;">
@@ -660,15 +647,15 @@
       <div class="mv-grid">
         <div class="mv-card">
           <h3>🎯 Mission</h3>
-          <p>To recover organic waste from Phnom Penh's food businesses and rural farms, and turn it into affordable, safe organic fertilizer for Cambodian farmers.</p>
+          <p>[Write your mission statement here — e.g. To make food waste collection effortless for restaurants and turn it into affordable, quality fertilizer for local farmers.]</p>
         </div>
         <div class="mv-card">
           <h3>🌍 Vision</h3>
-          <p>A more self-reliant, sustainable agricultural system in Cambodia — reducing both landfill waste and dependence on imported chemical fertilizer.</p>
+          <p>[Write your vision statement here — e.g. A Cambodia where food waste is treated as a resource, not garbage.]</p>
         </div>
         <div class="mv-card">
           <h3>💚 Core Values</h3>
-          <p>Safety through bacteria and pathogen control, research grounded in real, cited data on Cambodia's waste and fertilizer challenges, and fair, transparent terms with every partner — from BKK1 businesses to rural suppliers.</p>
+          <p>[List your values here — e.g. Sustainability, transparency, community, accessibility.]</p>
         </div>
       </div>
     </div>
@@ -807,22 +794,18 @@
   <section class="hero" style="padding:70px 5%;">
     <div class="max">
       <div class="eyebrow">Our Products</div>
-      <h1 style="font-size:2.2rem;">Our Products &amp; Services</h1>
-      <p style="margin-top:14px; max-width:600px;">From recovered waste to affordable organic fertilizer — here's what GE-Z makes, and how we source the material that goes into it.</p>
+      <h1 style="font-size:2.2rem;">Services &amp; Products</h1>
+      <p style="margin-top:14px; max-width:600px;">From pickup to soil — everything GE-Z offers to restaurants, farmers, and gardeners.</p>
     </div>
   </section>
 
   <section>
     <div class="max cards" style="grid-template-columns:1fr;">
       <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
-        <div class="ph" style="height:100%; border-radius:0;">Photo of Smart Organic Cube</div>
+        <div class="ph" style="height:100%; border-radius:0;">Photo of collection route / bins</div>
         <div class="card-body">
-          <h3>Smart Organic Cube (SOC)</h3>
-          <p style="font-style:italic; color:var(--leaf); margin-bottom:10px;">Fertilizer, Simplified</p>
-          <p>A pre-measured, compressed organic fertilizer cube, wrapped in water-soluble paper and packaged in a reusable, protective metal tin. Made from recovered food waste and organic farm residue, each cube is measured for a specific amount of water and land.</p>
-          <p style="margin-top:10px;"><strong>How to use:</strong> Dissolve the wrapped cube directly in water (the paper dissolves cleanly on contact) and apply the solution to the soil before planting to prepare the ground with organic nutrients. The same solution can also be applied later, directly to the root, to support crops as they grow. Exact water-to-cube ratios will be finalized through field testing and lab research before commercial scale.</p>
-          <p style="margin-top:10px; font-weight:600; color:var(--forest);">Dissolve Cube → Mix into Soil → Prepare the Soil → Plant Crops</p>
-          <p style="margin-top:10px;"><strong>Packaging:</strong> Every SOC purchase includes its tin. Customers are encouraged to save and return empty tins through our exchange program, which will be structured following further cost analysis — returned tins are cleaned and reused to repackage future SOCs in continuous circulation.</p>
+          <h3>Waste Collection Service</h3>
+          <p>Restaurants register as a "Food Waste Partner" on the GE-Z app and schedule pickups on their own timetable. Our team follows a set route, collects sorted organic waste, and transports it to our processing facility. Free bins and short staff training are included so sorting stays simple.</p>
         </div>
       </div>
     </div>
@@ -831,38 +814,22 @@
   <section style="background:#fff;">
     <div class="max cards" style="grid-template-columns:1fr;">
       <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
-        <div class="ph" style="height:100%; border-radius:0;">Photo of bulk compost sack</div>
+        <div class="ph" style="height:100%; border-radius:0;">Photo of Smart Compost Cube</div>
         <div class="card-body">
-          <h3>Sack (Uncompressed Compost)</h3>
-          <p style="font-style:italic; color:var(--leaf); margin-bottom:10px;">Fertilizer at Scale</p>
-          <p>Bulk, sterilized, uncompressed organic compost, made from the same recovered waste as SOC, available for single purchase or wholesale order — built for larger agricultural operations.</p>
-          <p style="margin-top:10px;"><strong>How to use:</strong> The Sack is flexible by design — it can be applied dry, worked directly into the soil, or mixed with water depending on the farm's preferred method. Specific application guidelines will be provided following further product testing.</p>
+          <h3>Smart Compost Cube</h3>
+          <p>Collected waste is composted and compressed into the Smart Compost Cube — a pre-measured block of organic fertilizer, sized for a specific amount of land and water, and wrapped in biodegradable packaging. Sold to farmers, agricultural businesses, plant nurseries, and gardening stores.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="max">
-      <div class="section-head">
-        <div class="eyebrow">Our Service</div>
-        <h2>Organic Waste Collection</h2>
-        <p>Our primary operational service — recovering organic waste from two supplier tiers, which we turn into SOC tins and bulk Sacks.</p>
-      </div>
-      <div class="cards" style="grid-template-columns:1fr 1fr;">
-        <div class="card">
-          <div class="ph" style="height:170px;">Photo of restaurant collection</div>
-          <div class="card-body">
-            <h3>Green Waste — Urban Food Businesses</h3>
-            <p>Sourced at zero material cost from BKK1 restaurants, cafés, and supermarkets (cooked food, fruit peels, coffee grounds). In return, partners receive a Green Certificate, free hygiene collection bins, staff sorting guidance, complimentary brand visibility, and monthly recognition points. Collection is coordinated through GE-Z's internal logistics app, which schedules pickups and directs our collection team's routes.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ph" style="height:170px;">Photo of rural collection</div>
-          <div class="card-body">
-            <h3>Brown Waste — Rural Communities &amp; Farms</h3>
-            <p>Rural communities and farms supply manure, branches, and crop residue, purchased by GE-Z at a per-kilo rate. Village-level collection is organized through campaigns coordinated with district or village chiefs, since door-to-door app scheduling isn't practical given limited digital access in rural areas. Farm-level collection is handled directly by our own team. Partner farms receive the per-kilo payment along with early access to test finished SOC and Sack products, generating real-world results ahead of wider launch.</p>
-          </div>
+    <div class="max cards" style="grid-template-columns:1fr;">
+      <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
+        <div class="ph" style="height:100%; border-radius:0;">Photo of certificate</div>
+        <div class="card-body">
+          <h3>Green Partner Program</h3>
+          <p>Restaurant partners who consistently sort and hand over waste well receive a "Green Partner" certificate — recognition they can display and share, encouraging long-term participation in the program.</p>
         </div>
       </div>
     </div>
@@ -935,9 +902,9 @@
     <div>
       <h4>Our Products</h4>
       <ul>
-        <li><a data-page="services" onclick="goTo('services')">Smart Organic Cube</a></li>
-        <li><a data-page="services" onclick="goTo('services')">Sack (Bulk Compost)</a></li>
-        <li><a data-page="services" onclick="goTo('services')">Organic Waste Collection</a></li>
+        <li><a data-page="services" onclick="goTo('services')">Collection Service</a></li>
+        <li><a data-page="services" onclick="goTo('services')">Smart Compost Cube</a></li>
+        <li><a data-page="services" onclick="goTo('services')">Green Partner Program</a></li>
       </ul>
     </div>
     <div>
