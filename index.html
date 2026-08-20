@@ -871,16 +871,17 @@
           <li><div class="icon">🌐</div><div><h4>Social</h4><p>[Add Facebook / Telegram / TikTok links]</p></div></li>
         </ul>
       </div>
-      <form onsubmit="event.preventDefault(); alert('This is a first-draft form — connect it once the site is finalized.');">
+      <form id="contactForm" action="https://formspree.io/f/xyegognp" method="POST">
         <label>Full Name</label>
-        <input type="text" placeholder="Your name">
+        <input type="text" name="name" placeholder="Your name" required>
         <label>Email</label>
-        <input type="email" placeholder="you@example.com">
+        <input type="email" name="email" placeholder="you@example.com" required>
         <label>I am a...</label>
-        <input type="text" placeholder="Restaurant / Farmer / Other">
+        <input type="text" name="i_am_a" placeholder="Restaurant / Farmer / Other">
         <label>Message</label>
-        <textarea rows="4" placeholder="Tell us how we can help"></textarea>
+        <textarea name="message" rows="4" placeholder="Tell us how we can help" required></textarea>
         <button type="submit">Send Message</button>
+        <p id="contactFormStatus" style="margin-top:12px; font-size:0.9rem; display:none;"></p>
       </form>
     </div>
   </section>
