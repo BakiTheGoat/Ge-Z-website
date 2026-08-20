@@ -198,6 +198,19 @@
   .intro h2{font-size:2rem; margin-bottom:16px;}
   .intro p{margin-bottom:14px; color:#4b4b46;}
 
+  /* ---------- Our Story (stat box + text) ---------- */
+  .story-stat-box{
+    background:var(--cream); border-radius:14px; padding:36px 24px;
+    display:flex; flex-direction:column; align-items:center; gap:24px;
+  }
+  .story-stat{text-align:center;}
+  .story-stat-num{
+    font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700;
+    color:var(--gold); line-height:1;
+  }
+  .story-stat p{font-size:0.82rem; color:#6b6b64; margin-top:8px; line-height:1.5; max-width:180px; margin-left:auto; margin-right:auto;}
+  .story-stat-divider{width:60%; height:1px; background:var(--kraft);}
+
   /* ---------- Cycle diagram (signature element) ---------- */
   .cycle-section{background:var(--forest); color:var(--cream);}
   .cycle-section .eyebrow{color:var(--leaf-soft);}
@@ -226,6 +239,7 @@
   .section-head h2{font-size:2rem;}
   .section-head p{color:#565650; margin-top:10px;}
   .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .cards-2col{grid-template-columns:1fr 1fr;}
   .card{
     background:#fff; border-radius:14px; overflow:hidden;
     box-shadow:0 10px 26px rgba(31,61,43,0.08);
@@ -389,6 +403,7 @@
 
   @media(max-width:900px){
     .hero-grid, .intro, .contact-grid{grid-template-columns:1fr;}
+
     .cards, .news-grid, .mv-grid{grid-template-columns:1fr 1fr;}
     .cycle{grid-template-columns:1fr; gap:24px;}
     .cycle-arrow{transform:rotate(90deg);}
@@ -614,31 +629,41 @@
 <!-- ================= ABOUT ================= -->
 <main id="about" class="page">
   <section class="hero" style="padding:70px 5%;">
-    <div class="max">
-      <div class="eyebrow">About GE-Z</div>
-      <h1 style="font-size:2.2rem;">Green Ecosystem, Zero Waste.</h1>
-      <p style="margin-top:14px;">GE-Z sounds like "Gen Z" — because this idea comes from us, Gen Z. GE also echoes the Khmer word ជី. <strong>G</strong>reen, <strong>E</strong>cosystem, <strong>Z</strong>ero Waste — a name for a generation building a circular economy in Cambodia, one restaurant at a time.</p>
+    <div class="max intro">
+      <div>
+        <div class="eyebrow">Brand Identity</div>
+        <h1 style="font-size:2.2rem;">Green Ecosystem, Zero Waste.</h1>
+        <p style="margin-top:14px; color:var(--cream); opacity:0.92;">GE-Z sounds like "Gen Z" — because this idea comes from us, Gen Z, and echoes the Khmer word ជី. <strong>G</strong>reen, <strong>E</strong>cosystem, <strong>Z</strong>ero Waste, built around a circular economy: the letter "G" for Green, the circle for the cycle of waste into compost into agriculture, the leaves for growth, and the brown-and-gold texture for soil and harvest.</p>
+      </div>
+      <div class="ph" style="height:260px; background:#fff; border-style:solid; border-color:rgba(255,255,255,0.3);">
+        <img src="logo-lockup.png" alt="GE-Z logo" style="width:100%; height:100%; object-fit:contain; border-radius:0;">
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff; padding-top:50px; padding-bottom:50px;">
+    <div class="max intro">
+      <div class="story-stat-box">
+        <div class="story-stat">
+          <div class="story-stat-num">51.9%</div>
+          <p>of Phnom Penh's municipal waste is food waste</p>
+        </div>
+        <div class="story-stat-divider"></div>
+        <div class="story-stat">
+          <div class="story-stat-num">98%</div>
+          <p>of Cambodia's chemical fertilizer is imported</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h2 style="font-size:2rem; margin-bottom:16px;">Two problems, one fix</h2>
+        <p>GE-Z is a Phnom Penh-based organic fertilizer startup, founded by a team of Digital Marketing students turning an academic SME project into a real business.</p>
+        <p style="margin-top:12px;">Over 51.9% of Phnom Penh's municipal waste is food waste, while Cambodia imports roughly 98% of its chemical fertilizer, with prices recently surging 25–30%. We collect food waste from BKK1 restaurants and residue from rural farms, and turn it into affordable, safer organic fertilizer — turning one problem into the fix for the other.</p>
+      </div>
     </div>
   </section>
 
   <section>
-    <div class="max intro">
-      <div class="ph" style="height:280px; background:var(--cream); border-style:solid;">
-        <img src="logo-lockup.png" alt="GE-Z logo" style="width:100%; height:100%; object-fit:contain; border-radius:0;">
-      </div>
-      <div>
-        <div class="eyebrow">Logo Symbolism</div>
-        <h2 style="font-size:1.8rem;">What our mark means</h2>
-        <p>The GE-Z logo represents our mission to transform food waste into a valuable resource through a circular economy.</p>
-        <p><strong>The letter "G"</strong> stands for GE-Z and Green, symbolizing sustainability and environmental responsibility.</p>
-        <p><strong>The circular design</strong> represents the continuous cycle of collecting food waste, converting it into compost, and returning nutrients to agriculture instead of sending waste to landfills.</p>
-        <p><strong>The leaves</strong> symbolize growth, nature, and the renewal of resources.</p>
-        <p><strong>The brown organic texture</strong> represents compost and healthy soil, while the <strong>golden grain pattern</strong> reflects agriculture and the value created from recovered food waste.</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:#fff;">
     <div class="max">
       <div class="section-head">
         <div class="eyebrow">Our Foundation</div>
@@ -794,42 +819,54 @@
   <section class="hero" style="padding:70px 5%;">
     <div class="max">
       <div class="eyebrow">Our Products</div>
-      <h1 style="font-size:2.2rem;">Services &amp; Products</h1>
-      <p style="margin-top:14px; max-width:600px;">From pickup to soil — everything GE-Z offers to restaurants, farmers, and gardeners.</p>
+      <h1 style="font-size:2.2rem;">Products &amp; Services</h1>
+      <p style="margin-top:14px; max-width:600px;">From recovered waste to affordable organic fertilizer — what GE-Z makes, and how we source it.</p>
     </div>
   </section>
 
   <section>
-    <div class="max cards" style="grid-template-columns:1fr;">
-      <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
-        <div class="ph" style="height:100%; border-radius:0;">Photo of collection route / bins</div>
+    <div class="max cards cards-2col">
+      <div class="card">
+        <div class="ph" style="height:190px;">Photo of Smart Organic Cube</div>
         <div class="card-body">
-          <h3>Waste Collection Service</h3>
-          <p>Restaurants register as a "Food Waste Partner" on the GE-Z app and schedule pickups on their own timetable. Our team follows a set route, collects sorted organic waste, and transports it to our processing facility. Free bins and short staff training are included so sorting stays simple.</p>
+          <h3>Smart Organic Cube (SOC)</h3>
+          <p style="font-style:italic; color:var(--leaf); font-size:0.85rem; margin-bottom:8px;">Fertilizer, Simplified</p>
+          <p>A pre-measured, compressed fertilizer cube wrapped in water-soluble paper and packed in a reusable tin. Dissolve in water and apply straight to the soil.</p>
+          <p style="margin-top:10px; font-weight:600; color:var(--forest); font-size:0.85rem;">Dissolve → Mix into Soil → Plant Crops</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ph" style="height:190px;">Photo of bulk compost sack</div>
+        <div class="card-body">
+          <h3>Sack (Uncompressed Compost)</h3>
+          <p style="font-style:italic; color:var(--leaf); font-size:0.85rem; margin-bottom:8px;">Fertilizer at Scale</p>
+          <p>Bulk, sterilized organic compost from the same recovered waste as SOC — sold single or wholesale for larger farms. Apply dry, worked into soil, or mixed with water.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section style="background:#fff;">
-    <div class="max cards" style="grid-template-columns:1fr;">
-      <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
-        <div class="ph" style="height:100%; border-radius:0;">Photo of Smart Compost Cube</div>
-        <div class="card-body">
-          <h3>Smart Compost Cube</h3>
-          <p>Collected waste is composted and compressed into the Smart Compost Cube — a pre-measured block of organic fertilizer, sized for a specific amount of land and water, and wrapped in biodegradable packaging. Sold to farmers, agricultural businesses, plant nurseries, and gardening stores.</p>
-        </div>
+    <div class="max">
+      <div class="section-head">
+        <div class="eyebrow">Our Service</div>
+        <h2>Organic Waste Collection</h2>
+        <p>We recover waste from two supplier tiers and turn it into SOC and Sack.</p>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="max cards" style="grid-template-columns:1fr;">
-      <div class="card" style="display:grid; grid-template-columns:0.9fr 1.1fr;">
-        <div class="ph" style="height:100%; border-radius:0;">Photo of certificate</div>
-        <div class="card-body">
-          <h3>Green Partner Program</h3>
-          <p>Restaurant partners who consistently sort and hand over waste well receive a "Green Partner" certificate — recognition they can display and share, encouraging long-term participation in the program.</p>
+      <div class="cards cards-2col">
+        <div class="card">
+          <div class="ph" style="height:170px;">Photo of restaurant collection</div>
+          <div class="card-body">
+            <h3>Green Waste — Urban Businesses</h3>
+            <p>Free pickup from BKK1 restaurants, cafés, and supermarkets. Partners get a Green Certificate, free bins, sorting guidance, and brand visibility.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ph" style="height:170px;">Photo of rural collection</div>
+          <div class="card-body">
+            <h3>Brown Waste — Rural Farms</h3>
+            <p>We buy manure and crop residue from rural farms at a per-kilo rate, coordinated through village chiefs and our own collection team.</p>
+          </div>
         </div>
       </div>
     </div>
