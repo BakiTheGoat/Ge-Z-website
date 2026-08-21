@@ -280,6 +280,9 @@
 
   /* ---------- About page ---------- */
   .mv-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:20px;}
+  .mv-grid-2col{grid-template-columns:1fr 1fr;}
+  .mv-stack{display:flex; flex-direction:column; gap:24px;}
+  .mv-stack .mv-card{flex:1;}
   .mv-card{background:#fff; border-radius:14px; padding:28px; border-top:4px solid var(--leaf);}
   .mv-card h3{font-size:1.1rem; margin-bottom:10px;}
   .mv-card p{font-size:0.9rem; color:#565650;}
@@ -669,7 +672,7 @@
         <div class="eyebrow">Our Foundation</div>
         <h2>Mission, Vision &amp; Values</h2>
       </div>
-      <div class="mv-grid">
+      <div class="mv-grid mv-grid-2col">
         <div class="mv-card">
           <h3>🎯 Mission</h3>
           <p style="margin-bottom:10px;">GE-Z connects city waste recovery with agricultural needs through three direct actions:</p>
@@ -679,13 +682,15 @@
             <li><strong>Closing the Loop:</strong> Connecting urban partners, rural communities, and local facilities to build a self-reliant agricultural system.</li>
           </ul>
         </div>
-        <div class="mv-card">
-          <h3>🌍 Vision</h3>
-          <p>A clean, circular Cambodia where organic waste is valued and transformed into affordable local fertilizer rather than being sent to landfills, helping restore healthier soils and reduce dependence on imported chemical fertilizer.</p>
-        </div>
-        <div class="mv-card">
-          <h3>💚 Core Values</h3>
-          <p>[List your values here — e.g. Sustainability, transparency, community, accessibility.]</p>
+        <div class="mv-stack">
+          <div class="mv-card">
+            <h3>🌍 Vision</h3>
+            <p>A clean, circular Cambodia where organic waste is valued and transformed into affordable local fertilizer rather than being sent to landfills, helping restore healthier soils and reduce dependence on imported chemical fertilizer.</p>
+          </div>
+          <div class="mv-card">
+            <h3>💚 Core Values</h3>
+            <p>[List your values here — e.g. Sustainability, transparency, community, accessibility.]</p>
+          </div>
         </div>
       </div>
     </div>
