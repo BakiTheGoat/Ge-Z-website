@@ -187,10 +187,15 @@
   .stats-strip .max{
     display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding:30px 0;
   }
-  .stat{text-align:center; border-right:1px solid var(--kraft);}
+  .stat{text-align:center; border-right:1px solid var(--kraft); display:flex; flex-direction:column; justify-content:center;}
   .stat:last-child{border-right:none;}
-  .stat .num{font-family:'Playfair Display',serif; font-size:2rem; color:var(--leaf); font-weight:700;}
+  .stat .num{font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--leaf); font-weight:700; white-space:nowrap;}
   .stat .lbl{font-size:0.8rem; color:var(--charcoal); opacity:0.75;}
+  .stat .num-badge{
+    display:inline-block; background:var(--gold); color:var(--forest);
+    font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    padding:6px 14px; border-radius:20px; margin-bottom:6px;
+  }
 
   /* ---------- Intro / About snippet ---------- */
   .intro{display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:center;}
@@ -435,6 +440,7 @@
     .cycle-connector{display:block; color:var(--gold); font-size:1.4rem; text-align:center; margin:8px 0; transform:rotate(90deg);}
     .foot-grid{grid-template-columns:1fr 1fr;}
     .stats-strip .max{grid-template-columns:1fr 1fr;}
+    .stat .num{font-size:1.15rem; white-space:normal;}
   }
   @media(max-width:640px){
     .nav-links{
@@ -529,11 +535,14 @@
   </section>
 
   <section class="stats-strip">
+    <div class="max" style="text-align:center; padding-top:8px;">
+      <span style="display:inline-block; background:var(--gold); color:var(--forest); font-size:0.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:6px 16px; border-radius:20px; margin-bottom:22px;">First Year Goals</span>
+    </div>
     <div class="max">
-      <div class="stat"><div class="num">--</div><div class="lbl">Restaurant Partners</div></div>
-      <div class="stat"><div class="num">--kg</div><div class="lbl">Waste Collected / Month</div></div>
-      <div class="stat"><div class="num">500kg</div><div class="lbl">Target Compost Output</div></div>
-      <div class="stat"><div class="num">--</div><div class="lbl">Farmer Customers</div></div>
+      <div class="stat"><div class="num">15–20</div><div class="lbl">Restaurant Partners</div></div>
+      <div class="stat"><div class="num">~7,000–11,000kg</div><div class="lbl">Waste Collected / Month</div></div>
+      <div class="stat"><div class="num">~2,000–4,000kg</div><div class="lbl">Target Compost Output</div></div>
+      <div class="stat"><div class="num-badge">First Year</div></div>
     </div>
   </section>
 
@@ -711,7 +720,11 @@
           </div>
           <div class="mv-card">
             <h3>💚 Core Values</h3>
-            <p>[List your values here — e.g. Sustainability, transparency, community, accessibility.]</p>
+            <ul style="padding-left:18px; font-size:0.9rem; color:#565650;">
+              <li style="margin-bottom:8px;"><strong>Sustainability:</strong> Turning waste into value, not landfill.</li>
+              <li style="margin-bottom:8px;"><strong>Transparency:</strong> Fair terms with every partner, always.</li>
+              <li><strong>Accessibility:</strong> Affordable fertilizer, real alternative to chemicals.</li>
+            </ul>
           </div>
         </div>
       </div>
