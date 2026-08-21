@@ -363,6 +363,26 @@
     font-weight:600; cursor:pointer; font-size:0.9rem;
   }
 
+  /* ---------- Map split (location + embedded map) ---------- */
+  .map-split{
+    display:grid; grid-template-columns:0.85fr 1.15fr;
+    border-radius:16px; overflow:hidden; min-height:420px;
+    box-shadow:0 20px 50px rgba(31,61,43,0.14);
+  }
+  .map-info-card{
+    background:var(--forest); color:var(--cream);
+    padding:44px 38px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .map-info-label{
+    display:flex; align-items:center; gap:8px;
+    color:var(--gold); font-size:0.78rem; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  .map-info-card h3{color:#fff; font-size:1.8rem; margin-bottom:16px;}
+  .map-info-card p{opacity:0.85; line-height:1.6; margin-bottom:28px;}
+  .map-embed{position:relative; min-height:300px;}
+  .map-embed iframe{position:absolute; inset:0; width:100%; height:100%;}
+
   /* ---------- Footer ---------- */
   footer{background:var(--forest); color:var(--cream); padding:36px 5% 24px; position:relative; overflow:hidden;}
   .foot-grid{
@@ -406,6 +426,8 @@
 
   @media(max-width:900px){
     .hero-grid, .intro, .contact-grid{grid-template-columns:1fr;}
+    .map-split{grid-template-columns:1fr;}
+    .map-embed{min-height:280px;}
 
     .cards, .news-grid, .mv-grid{grid-template-columns:1fr 1fr;}
     .cycle{grid-template-columns:1fr; gap:24px;}
@@ -915,7 +937,7 @@
     <div class="max contact-grid">
       <div class="contact-info">
         <ul>
-          <li><div class="icon">📍</div><div><h4>Location</h4><p>[Add your address / service area in Phnom Penh]</p></div></li>
+          <li><div class="icon">📍</div><div><h4>Location</h4><p>JS Tower, 50-38 St 322, Sangkat Boeung Keng Kang 2, Phnom Penh</p></div></li>
           <li><div class="icon">📞</div><div><h4>Phone</h4><p>[Add phone number]</p></div></li>
           <li><div class="icon">✉️</div><div><h4>Email</h4><p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gezcambodia@gmail.com" target="_blank" rel="noopener" style="color:inherit;">gezcambodia@gmail.com</a></p></div></li>
           <li><div class="icon">🌐</div><div><h4>Social</h4><p>[Add Facebook / Telegram / TikTok links]</p></div></li>
@@ -933,6 +955,31 @@
         <button type="submit">Send Message</button>
         <p id="contactFormStatus" style="margin-top:12px; font-size:0.9rem; display:none;"></p>
       </form>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="max">
+      <div class="section-head">
+        <div class="eyebrow">Location</div>
+        <h2>Visit Our <em style="color:var(--gold); font-style:italic;">Office</em></h2>
+        <p>Conveniently located in Phnom Penh.</p>
+      </div>
+      <div class="map-split">
+        <div class="map-info-card">
+          <div class="map-info-label"><span>📍</span> LOCATION</div>
+          <h3>JS Tower</h3>
+          <p>50-38 St 322,<br>Sangkat Boeung Keng Kang 2,<br>Phnom Penh, Cambodia</p>
+          <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=JS+Tower+50-38+St+322+Phnom+Penh" target="_blank" rel="noopener">GET DIRECTIONS →</a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=JS+Tower,+50-38+St+322,+Phnom+Penh&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -964,7 +1011,7 @@
     </div>
     <div>
       <h4>Contact Us</h4>
-      <div class="foot-contact-line"><span class="icon">📍</span><span>[Add your address / service area in Phnom Penh]</span></div>
+      <div class="foot-contact-line"><span class="icon">📍</span><span>JS Tower, 50-38 St 322, Sangkat Boeung Keng Kang 2, Phnom Penh</span></div>
       <div class="foot-contact-line"><span class="icon">📞</span><span>[Add phone number]</span></div>
       <div class="foot-contact-line"><span class="icon">✉️</span><span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gezcambodia@gmail.com" target="_blank" rel="noopener" style="color:inherit;">gezcambodia@gmail.com</a></span></div>
     </div>
