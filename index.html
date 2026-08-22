@@ -301,11 +301,11 @@
 
   .team-carousel-wrap{
     position:relative;
-    overflow:hidden; padding:20px 0 10px; margin-top:10px;
+    overflow-x:hidden; overflow-y:visible; padding:20px 0 10px; margin-top:10px;
   }
   .team-carousel{
     position:relative;
-    height:685px;
+    height:730px;
   }
   .tm-card{
     position:absolute; top:0; left:50%; width:300px;
@@ -337,8 +337,7 @@
   .tm-name{font-size:1.05rem; color:var(--forest); margin-bottom:4px; font-family:'Playfair Display',serif;}
   .tm-role{
     font-size:0.72rem; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;
-    line-height:1.3; height:32px; overflow:hidden; text-overflow:ellipsis;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    line-height:1.3;
   }
   .tm-dept{font-size:0.78rem; color:#7a7a72;}
   .tm-mail{
@@ -474,7 +473,7 @@
        overlap regardless of any spacing calculation. */
     .tm-card{width:78%; max-width:280px;}
     .tm-card:not(.tm-active){display:none;}
-    .team-carousel{height:600px;}
+    .team-carousel{height:650px;}
     .team-nav{top:170px;}
   }
 </style>
