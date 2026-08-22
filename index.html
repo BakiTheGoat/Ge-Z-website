@@ -258,11 +258,18 @@
   .card-link{color:var(--leaf); font-weight:600; font-size:0.85rem;}
 
   /* ---------- News ---------- */
-  .news-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .news-card{background:#fff; border-radius:12px; padding:20px; border-left:4px solid var(--gold);}
+  .news-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .news-card{background:#fff; border-radius:12px; padding:24px; border-left:4px solid var(--kraft);}
+  .news-status{
+    display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:1px;
+    text-transform:uppercase; padding:5px 12px; border-radius:20px; margin-bottom:12px;
+    background:var(--kraft); color:#6b5f4a;
+  }
+  .news-status-active{background:var(--leaf); color:#fff;}
+  .news-card.news-card-active{border-left-color:var(--leaf);}
   .news-date{font-size:0.75rem; color:var(--gold); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;}
-  .news-card h4{font-size:1rem; margin-bottom:8px; color:var(--forest);}
-  .news-card p{font-size:0.85rem; color:#666; opacity:0.85;}
+  .news-card h4{font-size:1.05rem; margin-bottom:10px; color:var(--forest); line-height:1.4;}
+  .news-card p{font-size:0.88rem; color:#666; opacity:0.9; line-height:1.6;}
 
   /* ---------- CTA band ---------- */
   .cta-band{
@@ -496,7 +503,7 @@
           <li><a data-page="services" onclick="goTo('services')">Green Partner Program</a></li>
         </ul>
       </li>
-      <li><a data-page="news" onclick="goTo('news')">Our Journey</a></li>
+      <li><a data-page="news" onclick="goTo('news')">Our Milestone</a></li>
       <li><a data-page="contact" onclick="goTo('contact')">Contact Us</a></li>
       <li><a class="nav-cta" data-page="contact" onclick="goTo('contact')">Become a Partner</a></li>
     </ul>
@@ -930,16 +937,33 @@
 <main id="news" class="page">
   <section class="hero" style="padding:70px 5%;">
     <div class="max">
-      <div class="eyebrow">Stay Updated</div>
-      <h1 style="font-size:2.2rem;">Our Journey</h1>
-      <p style="margin-top:14px;">Updates, milestones, and announcements from GE-Z.</p>
+      <div class="eyebrow">Our Roadmap</div>
+      <h1 style="font-size:2.2rem;">Our Milestone</h1>
+      <p style="margin-top:14px;">How we're building GE-Z, stage by stage.</p>
     </div>
   </section>
   <section>
     <div class="max news-grid">
-      <div class="news-card"><div class="news-date">Add date</div><h4>[Headline of your first update]</h4><p>Short summary goes here. Replace with a real announcement, milestone, or event.</p></div>
-      <div class="news-card"><div class="news-date">Add date</div><h4>[Headline of your second update]</h4><p>Short summary goes here. Replace with a real announcement, milestone, or event.</p></div>
-      <div class="news-card"><div class="news-date">Add date</div><h4>[Headline of your third update]</h4><p>Short summary goes here. Replace with a real announcement, milestone, or event.</p></div>
+      <div class="news-card news-card-active">
+        <div class="news-status news-status-active">IN PROGRESS</div>
+        <h4>Stage 1 (Year 1) — Pilot Launch &amp; Initial Commercial Sales</h4>
+        <p>Onboarding our first 15-20 BKK1 restaurant and café partners, sourcing rural waste from Kampong Speu and Ang Snuol, and launching commercial sales of SOC and Sack to early customers.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-status">UPCOMING</div>
+        <h4>Stage 2 (Year 2) — Urban Expansion &amp; The Tin Loop</h4>
+        <p>Expanding collection into Toul Tompoung and Daun Penh, launching paid waste recovery at major produce markets, and rolling out our closed-loop tin exchange program.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-status">UPCOMING</div>
+        <h4>Stage 3 (Year 3) — Household Integration &amp; Smart Logistics</h4>
+        <p>Piloting residential waste sorting with local authorities, deploying Smart Box Stations in neighborhoods, and upgrading our logistics platform with real-time impact tracking.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-status">UPCOMING</div>
+        <h4>Stage 4 (Year 4-5) — Full Industrialization &amp; National Reach</h4>
+        <p>Commissioning GE-Z's own manufacturing facility and scaling distribution to major agricultural provinces across Cambodia.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -1026,7 +1050,7 @@
       <h4>Company</h4>
       <ul>
         <li><a data-page="about" onclick="goTo('about')">About Us</a></li>
-        <li><a data-page="news" onclick="goTo('news')">Our Journey</a></li>
+        <li><a data-page="news" onclick="goTo('news')">Our Milestone</a></li>
         <li><a data-page="contact" onclick="goTo('contact')">Contact Us</a></li>
       </ul>
     </div>
